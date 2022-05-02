@@ -1,4 +1,7 @@
 defmodule AuctionWeb.Telemetry do
+  @moduledoc """
+    Provides telemetry capabilities to the project.
+  """
   use Supervisor
   import Telemetry.Metrics
 
