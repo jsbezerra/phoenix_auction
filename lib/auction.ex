@@ -24,8 +24,8 @@ defmodule Auction do
   end
 
   def insert_item(attrs) do
-    Item
-    |> struct(attrs)
+    %Item{}
+    |> Item.changeset(attrs)
     |> @repo.insert()
   end
 
@@ -34,6 +34,8 @@ defmodule Auction do
     |> Item.changeset(updates)
     |> @repo.update()
   end
+
+  def new_item, do: Item.changeset(%Item{})
 
   def delete_item(%Item{} = item), do: @repo.delete(item)
 end
