@@ -58,7 +58,8 @@ defmodule Auction.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.24", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.14", only: [:test], runtime: false}
+      {:excoveralls, "~> 0.14", only: [:test], runtime: false},
+      {:open_api_spex, "~> 3.11"}
     ]
   end
 
