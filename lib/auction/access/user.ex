@@ -3,6 +3,7 @@ defmodule Auction.Access.User do
     Defines the user for Authentication and Authorization.
   """
 
+  alias Auction.Access.Password
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -34,7 +35,7 @@ defmodule Auction.Access.User do
 
   defp hash_password(%Ecto.Changeset{changes: %{password: password}} = changeset) do
     changeset
-    |> put_change(:hashed_password, Auction.Access.Password.hash(password))
+    |> put_change(:hashed_password, Password.hash(password))
   end
 
   defp hash_password(changeset), do: changeset
