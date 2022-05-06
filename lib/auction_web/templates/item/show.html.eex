@@ -9,7 +9,7 @@
     <div style="flex: 1;">
         <h2>Current bids</h2>
         <%= for bid <- @item.bids do %>
-            <p><%= bid.amount %> <em>from <%= bid.user.username %></em></p>
+            <p><%= integer_to_currency(bid.amount) %> <em>from <%= bid.user.username %></em></p>
         <% end %>
     </div>
 
