@@ -7,7 +7,7 @@ defmodule Auction do
   if it comes from the database, an external API or others.
   """
   alias Auction.Access.{Password, User}
-  alias Auction.Core.Item
+  alias Auction.Core.{Bid, Item}
   alias Auction.Repo
 
   @repo Repo
@@ -62,5 +62,11 @@ defmodule Auction do
     else
       _ -> Password.dummy_verify()
     end
+  end
+
+  def insert_bid(params) do
+    %Bid{}
+    |> Bid.changeset(params)
+    |> @repo.insert()
   end
 end
