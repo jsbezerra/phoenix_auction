@@ -60,7 +60,8 @@ defmodule Auction.MixProject do
       {:ex_doc, "~> 0.24", only: :dev, runtime: false},
       {:excoveralls, "~> 0.14", only: [:test], runtime: false},
       {:comeonin, "~> 5.3"},
-      {:pbkdf2_elixir, "~> 2.0"}
+      {:pbkdf2_elixir, "~> 2.0"},
+      {:timex, "~> 3.7"}
     ]
   end
 
