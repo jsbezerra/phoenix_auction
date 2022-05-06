@@ -10,6 +10,7 @@ defmodule Auction.Core.Item do
     field :title, :string
     field :description, :string
     field :ends_at, :utc_datetime
+    has_many :bids, Auction.Core.Bid
     timestamps()
   end
 
