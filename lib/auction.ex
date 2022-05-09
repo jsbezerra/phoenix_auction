@@ -29,6 +29,7 @@ defmodule Auction do
   def get_item_with_bids(id) do
     id
     |> get_item()
+    |> @repo.preload(bids: from(b in Bid, order_by: [desc: b.inserted_at]))
     |> @repo.preload(bids: [:user])
   end
 
@@ -84,7 +85,7 @@ defmodule Auction do
     query =
       from b in Bid,
         where: b.user_id == ^user.id,
-        order_by: [desc: :inserted_at],
+        order_by: [asc: :inserted_at],
         preload: :item,
         limit: 10
 

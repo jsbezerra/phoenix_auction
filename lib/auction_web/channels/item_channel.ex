@@ -1,4 +1,7 @@
 defmodule AuctionWeb.ItemChannel do
+  @moduledoc """
+    Handles the channel for Item changes.
+  """
   use Phoenix.Channel
 
   def join("item:" <> _item_id, _params, socket) do
