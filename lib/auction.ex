@@ -80,6 +80,16 @@ defmodule Auction do
   You can then use the returned value to determine whether or not the User is
   authorized in your application. If an `Auction.Access.User` is _not_ found based on
   `username`, the computational work of hashing a password is still done.
+
+  ## Examples
+
+    iex> insert_user(%{username: "jonas", password: "example", password_confirmation: "example", email_address: "test@example.com"})
+    ...> result = get_user_by_username_and_password("jonas", "example")
+    ...> match?(%Auction.Access.User{username: "jonas"}, result)
+    true
+
+    iex> get_user_by_username_and_password("no_user", "bad_password")
+    false
   """
   def get_user_by_username_and_password(username, password) do
     with user when not is_nil(user) <- @repo.get_by(User, %{username: username}),

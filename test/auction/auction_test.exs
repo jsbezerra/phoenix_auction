@@ -2,7 +2,7 @@ defmodule AuctionTest do
   use ExUnit.Case
   alias Auction.Core.Item
   alias Auction.Repo
-  doctest Auction
+  doctest Auction, import: true
   import Ecto.Query
   import Ecto.Adapters.SQL.Sandbox
 
