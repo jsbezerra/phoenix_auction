@@ -1,4 +1,4 @@
-defmodule AuctionWeb.PageControllerTest do
+defmodule AuctionWeb.ItemControllerTest do
   use AuctionWeb.ConnCase
 
   test "GET /", %{conn: conn} do
